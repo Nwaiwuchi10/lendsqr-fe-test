@@ -1,0 +1,106 @@
+.user-profile {
+  color: #213f7d;
+  .user-h {
+    color: #213f7d;
+    font-size: x-large;
+    font-family: "Work Sans";
+    margin-top: 10px;
+  }
+  @media (max-width: 480px) {
+    .user-h {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .disp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+  }
+  @media (max-width: 868px) {
+    .disp {
+      margin-left: auto;
+      margin-right: auto;
+      flex-wrap: wrap;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+  }
+
+  .card-border-div {
+    display: block;
+    justify-content: flex-start;
+    align-items: center;
+    align-items: center;
+    width: 250px;
+    height: 150px;
+    border: 1px solid rgba(33, 64, 125, 0.205);
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    @media (max-width: 868px) {
+      .card-border-div {
+        margin-bottom: 200px;
+      }
+    }
+  }
+  .content-bort {
+    margin-left: 30px;
+    margin-top: 30px;
+    line-height: 30px;
+    // margin-bottom: 50px;
+    align-items: center;
+  }
+  .circle-icon {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background: #ec6bdbc7;
+    align-items: center;
+  }
+  .circle-icon2 {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background: #77a0dd;
+    align-items: center;
+  }
+  .circle-icon3 {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background: #e772bb;
+    align-items: center;
+  }
+  .circle-icon4 {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background: #eb9ccc;
+    align-items: center;
+  }
+  .fi-icon {
+    color: #770688;
+  }
+  .u-u-users {
+    color: #545f7d;
+    font-size: 13px;
+  }
+  .numbers-bold {
+    font-size: larger;
+    font-weight: bolder;
+  }
+}
