@@ -15,7 +15,7 @@ const UserProfile = () => {
         <div className="container user-profile">
           <div className="user-h">User</div>
           <div className=" disp">
-            <div className="card-border-div useInfo-border">
+            <div className="card-border-div ">
               <div className="content-bort">
                 <div className="circle-icon">
                   {" "}

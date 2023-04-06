@@ -86,12 +86,32 @@ li i div:hover {
 }
 @media (max-width: 828px) {
   .input-search {
-    width: 150px;
+    display: none;
   }
 }
+.logo-small-screen {
+  display: none;
+}
+@media (max-width: 646px) {
+  .logo-small-screen {
+    display: block;
+    align-items: center;
+  }
+}
+.logo-small-screen {
+  display: none;
+}
+
 @media (max-width: 480px) {
   .input-search {
     display: none;
+  }
+  .fibell-icon {
+    display: none;
+  }
+  .logo-small-screen {
+    display: flex;
+    align-items: center;
   }
   .search-btn {
     display: none;
@@ -99,5 +119,11 @@ li i div:hover {
   .person {
     right: 2px;
     gap: 6px;
+  }
+  .person div {
+    display: none;
+  }
+  .person i {
+    display: none;
   }
 }

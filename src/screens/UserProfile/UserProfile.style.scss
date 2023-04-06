@@ -1,12 +1,13 @@
 .user-profile {
   color: #213f7d;
+  width: 100%;
   .user-h {
     color: #213f7d;
     font-size: x-large;
     font-family: "Work Sans";
     margin-top: 10px;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     .user-h {
       display: flex;
       align-items: center;
@@ -31,6 +32,17 @@
       justify-content: center;
     }
   }
+  @media (max-width: 480px) {
+    .disp {
+      margin-left: auto;
+      margin-right: auto;
+      flex-wrap: wrap;
+      flex-direction: column;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+  }
 
   .card-border-div {
     display: block;
@@ -39,8 +51,10 @@
     align-items: center;
     width: 250px;
     height: 150px;
-    border: 1px solid rgba(33, 64, 125, 0.205);
-    border-radius: 8px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+
+    border-radius: 4px;
     background: #ffffff;
     margin-bottom: 20px;
     @media (max-width: 868px) {

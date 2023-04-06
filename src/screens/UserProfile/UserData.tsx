@@ -41,150 +41,142 @@ const UserData = () => {
 
   const paginate = (item: number) => setCurrentPage(item);
   return (
-    <div>
-      <section className="intro">
-        <div className="bg-image h-100">
-          <div className="mask d-flex align-items-center h-100">
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-12">
-                  <div className="card useInfo-border">
-                    <div className="card-body">
-                      <div className="table-responsive">
-                        <table className="table table-hover mb-0">
-                          <thead>
-                            <tr>
-                              <th scope="col">
-                                ORGANIZATION
-                                <img
-                                  src={filterIcon}
-                                  alt="img"
-                                  onClick={() => {
-                                    setFilter(!filter);
-                                  }}
-                                  style={{ cursor: "pointer" }}
-                                />{" "}
-                              </th>
+    <section className=" intro">
+      <div className="container">
+        {/* <div className="row justify-content-center"> */}
+        <div className="col-12">
+          <div className="card ">
+            <div className="card-body">
+              <div className="table-responsive">
+                <table className="table table-hover mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        ORGANIZATION
+                        <img
+                          src={filterIcon}
+                          alt="img"
+                          onClick={() => {
+                            setFilter(!filter);
+                          }}
+                          style={{ cursor: "pointer" }}
+                        />{" "}
+                      </th>
 
-                              <th scope="col">
-                                USERNAME
-                                <img
-                                  src={filterIcon}
-                                  alt="img"
-                                  onClick={() => {
-                                    setFilter(!filter);
-                                  }}
-                                  style={{ cursor: "pointer" }}
-                                />
-                              </th>
-                              <th scope="col">
-                                EMAIL
-                                <img
-                                  src={filterIcon}
-                                  alt="img"
-                                  onClick={() => {
-                                    setFilter(!filter);
-                                  }}
-                                  style={{ cursor: "pointer" }}
-                                />
-                              </th>
-                              <th scope="col">
-                                PHONE NUMBER
-                                <img
-                                  src={filterIcon}
-                                  alt="img"
-                                  onClick={() => {
-                                    setFilter(!filter);
-                                  }}
-                                  style={{ cursor: "pointer" }}
-                                />
-                              </th>
-                              <th scope="col">
-                                DATE JOINED
-                                <img
-                                  src={filterIcon}
-                                  alt="img"
-                                  onClick={() => {
-                                    setFilter(!filter);
-                                  }}
-                                  style={{ cursor: "pointer" }}
-                                />
-                              </th>
-                              <th scope="col">
-                                STATUS
-                                <img
-                                  src={filterIcon}
-                                  alt="img"
-                                  onClick={() => {
-                                    setFilter(!filter);
-                                  }}
-                                  style={{ cursor: "pointer" }}
-                                />
-                              </th>
-                            </tr>
-                          </thead>
-                          {filter ? (
-                            <div className="filterComponent">
-                              <Filter />
-                            </div>
-                          ) : null}
-                          <tbody>
-                            {currentPost?.map((users: any, i) => (
-                              <tr key={i}>
-                                <td>{users?.orgName}</td>
-                                <td>{users.userName}</td>
-                                <td>{users.email}</td>
-                                <td>{users.phoneNumber}</td>
-                                {/* <td>{users.createdAt}</td> */}
-                                <td>
-                                  {" "}
-                                  {moment(users.createdAt).format("lll")}
-                                </td>
-                                <td className="status">
-                                  <div className="dashboard-status">
-                                    inactive
-                                  </div>
-                                  {clickedIndex[users.id] && (
-                                    <div
-                                      className="option"
-                                      style={{ cursor: "pointer" }}
-                                    >
-                                      <UserOptions id={users.id} />
-                                    </div>
-                                  )}
-                                </td>
-                                <td>
-                                  <div
-                                    style={{ cursor: "pointer" }}
-                                    onClick={handleClick(users.id)}
-                                  >
-                                    <HiDotsVertical />
-                                  </div>
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
+                      <th scope="col">
+                        USERNAME
+                        <img
+                          src={filterIcon}
+                          alt="img"
+                          onClick={() => {
+                            setFilter(!filter);
+                          }}
+                          style={{ cursor: "pointer" }}
+                        />
+                      </th>
+                      <th scope="col">
+                        EMAIL
+                        <img
+                          src={filterIcon}
+                          alt="img"
+                          onClick={() => {
+                            setFilter(!filter);
+                          }}
+                          style={{ cursor: "pointer" }}
+                        />
+                      </th>
+                      <th scope="col">
+                        PHONE NUMBER
+                        <img
+                          src={filterIcon}
+                          alt="img"
+                          onClick={() => {
+                            setFilter(!filter);
+                          }}
+                          style={{ cursor: "pointer" }}
+                        />
+                      </th>
+                      <th scope="col">
+                        DATE JOINED
+                        <img
+                          src={filterIcon}
+                          alt="img"
+                          onClick={() => {
+                            setFilter(!filter);
+                          }}
+                          style={{ cursor: "pointer" }}
+                        />
+                      </th>
+                      <th scope="col">
+                        STATUS
+                        <img
+                          src={filterIcon}
+                          alt="img"
+                          onClick={() => {
+                            setFilter(!filter);
+                          }}
+                          style={{ cursor: "pointer" }}
+                        />
+                      </th>
+                    </tr>
+                  </thead>
+                  {filter ? (
+                    <div className="filterComponent">
+                      <Filter />
                     </div>
-                  </div>
-                  <div className="mt-4">
-                    <Pagination
-                      postsPerPage={postsPerPage}
-                      totalPosts={data.length}
-                      paginate={paginate}
-                      currentPage={currentPage}
-                      setCurrentPage={setCurrentPage}
-                      setPostPerPage={setPostPerPage}
-                    />
-                  </div>
-                </div>
+                  ) : null}
+                  <tbody>
+                    {currentPost?.map((users: any, i) => (
+                      <tr key={i}>
+                        <td data-label="orgName">{users?.orgName}</td>
+                        <td data-label="userName">{users.userName}</td>
+                        <td data-label="email">{users.email}</td>
+                        <td data-label="phoneNumber">{users.phoneNumber}</td>
+                        {/* <td>{users.createdAt}</td> */}
+                        <td data-label="date">
+                          {" "}
+                          {moment(users.createdAt).format("lll")}
+                        </td>
+                        <td data-label="inactive" className="status">
+                          <div className="dashboard-status">inactive</div>
+                          {clickedIndex[users.id] && (
+                            <div
+                              className="option"
+                              style={{ cursor: "pointer" }}
+                            >
+                              <UserOptions id={users.id} />
+                            </div>
+                          )}
+                        </td>
+                        <td data-label="dotMenu">
+                          <div
+                            style={{ cursor: "pointer" }}
+                            onClick={handleClick(users.id)}
+                          >
+                            <HiDotsVertical />
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
+          <div className="mt-4">
+            <Pagination
+              postsPerPage={postsPerPage}
+              totalPosts={data.length}
+              paginate={paginate}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              setPostPerPage={setPostPerPage}
+            />
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+      {/* </div> */}
+    </section>
   );
 };
 
